@@ -138,7 +138,7 @@ void start_game(board_game playground) {
         player = 'o';
     do {
         printf("Voici le plateau de jeu :\n");
-        if (played_column)
+        if (played_column > 0 && played_column <=10)
             printf("Le dernier joueur a jou%c %c la colonne %hd\n", 130, 133, played_column);
         printf("C'est au tour du joueur %c de jouer\n\n", player);
         display_playground(playground);
@@ -149,6 +149,8 @@ void start_game(board_game playground) {
             scanf("%hd", &played_row);
         }
         err = play(playground, played_column-1, played_row-1, player);
+        if (isWon(playground, player))
+            break;
         if (err) {
             if (player == 'x')
                 player = 'o';
