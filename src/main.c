@@ -5,7 +5,7 @@
 
 int main()
 {
-    board_game ps4 = initialize(10, 8, 4, 1); // 10 colonnes, 8 lignes, 4 pions d'affilée pour victoire, et gravité activée
+    board_game ps4 = initialize(10, 10, 4, 0, 1); // 10 colonnes, 8 lignes, 4 pions d'affilée pour victoire, et gravité activée
     start_game(ps4);
 
     return 0;
